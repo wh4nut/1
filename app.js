@@ -1,19 +1,19 @@
-let ladder = {
-	step: 0,
-	up: function () {
-		this.step++;
-		return this;
-	},
-	down: function () {
-		this.step--;
-		return this;
-	},
-	showStep: function () {
-		// показывает текущую ступеньку
+const numberOfFilms = +prompt('How much films do you see before?', '');
 
-		alert(this.step);
-		return this;
-	},
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false,
 };
 
-ladder.up().up().down().showStep();
+const lastFilmQuestion = prompt('Name of last film?', ''),
+	filmRateQuestion = +prompt('Score of this film from 1 o 10', ''),
+	lastFilmQuestion2 = prompt('Name of last film?', ''),
+	filmRateQuestion2 = +prompt('Score of this film from 1 o 10', '');
+
+personalMovieDB.movies[lastFilmQuestion] = filmRateQuestion;
+personalMovieDB.movies[lastFilmQuestion2] = filmRateQuestion2;
+
+console.log(personalMovieDB);
